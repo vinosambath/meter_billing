@@ -1,0 +1,7 @@
+database:
+  number_of_databases: 2
+  connections:
+    - dsn: user_name:password@tcp(localhost:3306)/readings_01
+    - dsn: user_name:password@tcp(localhost:3306)/readings_02
+logger:
+  path: logger.log
