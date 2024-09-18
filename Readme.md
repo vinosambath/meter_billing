@@ -1,4 +1,4 @@
-<img width="631" alt="Screenshot 2024-09-18 at 10 40 24 AM" src="https://github.com/user-attachments/assets/a976a7c7-bf26-47a3-8cb8-422965bbf7f9">Thought process
+Thought process
 
 **Goals**:
 - The goal is read a given meter readings and store the values into table.
