@@ -40,6 +40,9 @@ and different NMIindicators will have different executors
    4. For instance, header_event_200_record_parser.go has the knowledge to parse NMI and intervalLength info
    5. header_event_300_record_executor holds the responsibility to store the meter reading in db
 
+<img width="549" alt="Screenshot 2024-09-18 at 10 23 03 AM" src="https://github.com/user-attachments/assets/4f88499f-8e01-49df-b5f0-fbae2a3893e1">
+
+
 
 **Performance of the system**:
 1. The db is shared based on the "nmi". The logic only have 2 logical shards, but this could be increased.
