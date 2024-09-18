@@ -18,7 +18,7 @@ Refer Product discussions and decisions
 **Product discussions and decisions**:
 This data will be useful for users in two ways
 1. Display the data usage per hour as a graph [SP Utilities do this]
-   2. As a user I can see usage per hour in SP Utilities helping me to decode which device is consuming a lot of electricity
+   2. Users can see usage per hour in SP Utilities helping them to decode which device is consuming a lot of electricity
 2. Display the per day usage of the meter
 
 #2: Display the per day usage of the meter
@@ -33,8 +33,7 @@ cost. the logic in this application could be modified easily to handle this scen
 
 **Coding structure and details**:
 
-1. Meter Reading Service is considered a different service and this server might have smaller services.
-For that reason, the db layer sits above meter reading service and inside src/
+1. Meter Reading Service is considered a different service. The db layer sits above meter reading service and inside src/
 2. Configuration to read configs, loggers are all initiated at the start of the service
 3. Header Events are parsed and executed based on the NMIIndicator. This is made an interface 
 and different NMIindicators will have different executors
@@ -49,15 +48,16 @@ and different NMIindicators will have different executors
    2. Assumptions:
       3. We will query the data per nmi
    4. Pros:
-      5. Sharing the db load (writes and reads) across different databases
+      5. Sharing the db loads (writes and reads) across different databases
    6. Cons:
-      7. Joins on other fields not possible
+      7. [Assuming its not needed] Joins on other fields not possible
       8. Querying by other fields require reverse index
 9. The whole CSV file is NOT loaded into memory. Rather the CSV reader uses bufferIO to read line by line
 
 **What could be improved**:
-1. More logging to be added. I have covered important error logs, more info logs could be added for better debugging
+1. More logging to be added. Error logs were added extensively, more info logs could be added for better debugging
 2. Handling failures. The system adds logs, instead it could try to push it to a retry queue
 3. Storing the last processed record in the db, so when restarted the system processes it from the next record
 3. Adding graceful shutdown
-4. Add more tests. I have added just sample test, but we could definitely add more
+4. Add more tests. Test for the parser exist (header_event_record_parser_test.go), there is always scope to add more test 
+and make the system more reliable 
