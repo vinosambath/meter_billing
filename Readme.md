@@ -21,12 +21,12 @@ This data will be useful for users in two ways
    2. Users can see usage per hour in SP Utilities helping them to decode which device is consuming a lot of electricity
 2. Display the per day usage of the meter
 
-#2: Display the per day usage of the meter
-The application could sum all the usage of the meter for a day and store that value. This is more memory efficient.
+*#2: Display the per day usage of the meter*
+- The application could sum all the usage of the meter for a day and store that value. This is more memory efficient.
 The logic in this application handles this scenario. 
 
 *#1: Display the data usage per hour as a graph*
-This will definitely be useful for the user to see the information as a graph of per hour usage. This comes with storage
+- This will definitely be useful for the user to see the information as a graph of per hour usage. This comes with storage
 cost. the logic in this application could be modified easily to handle this scenario also along with #2
 
 **Technical Details**:
