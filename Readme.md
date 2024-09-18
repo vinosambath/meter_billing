@@ -5,7 +5,7 @@ Thought process
 - Q: Should we push per day day or the data as it is available in the file (every 5, 15 or 30 minutes).
 Refer Product discussions and decisions
 
-**Understanding of the NMI12 format**:
+**Understanding of the NEM12 format**:
 1. 100 marks the start of one unit processing
 2. Record Indicator 200 has 
    3. NMI information 
@@ -62,6 +62,6 @@ and different NMIindicators will have different executors
 1. More logging to be added. Error logs were added extensively, more info logs could be added for better debugging
 2. Handling failures. The system adds logs, instead it could try to push it to a retry queue
 3. Storing the last processed record in the db, so when restarted the system processes it from the next record
-3. Adding graceful shutdown
+3. Adding graceful shutdown. The main is already an every running server unless interrupted. Graceful shutdown will add more value to this
 4. Add more tests. Test for the parser exist (header_event_record_parser_test.go), there is always scope to add more test 
 and make the system more reliable 
