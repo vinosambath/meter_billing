@@ -12,4 +12,5 @@ create table meter_readings (
     constraint meter_readings_pk primary key (id),
     constraint meter_readings_unique_consumption unique (`nmi`, `timestamp`)
 );
+Alter table meter_readings_tables modify consumption DECIMAL(10,2);
 
